@@ -41,6 +41,7 @@ Rails.application.routes.draw do
     resources :units
     resources :investigations
     resources :officers
+    resources :sessions
   
   
     # Routes for assignments

@@ -13,11 +13,11 @@ class CriminalsController < ApplicationController
     def new
         @criminal = Criminal.new
     end
-
+    
     def create
         @criminal = Criminal.new(criminal_params)
         if @criminal.save
-            flash[:notice] = "Added criminal to GCPD."
+            flash[:notice] = "Successfully added " + @criminal.first_name + " " + @criminal.last_name + " to GCPD."
             redirect_to criminal_path(@criminal)
         else
             render action: 'new'
@@ -37,7 +37,7 @@ class CriminalsController < ApplicationController
 
     def destroy
         if @criminal.destroy
-            flash[:notice] = "Removed criminal from the system."
+            flash[:notice] = "Removed " + @criminal.first_name + " " + @criminal.last_name + " from the system."
             redirect_to criminals_path
         end
     end

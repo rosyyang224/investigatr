@@ -4,6 +4,9 @@ class InvestigationsController < ApplicationController
     def index
         @open_investigations = Investigation.is_open
         @closed_investigations = Investigation.is_closed
+        @closed_unsolved = Investigation.where(date_closed: nil, solved: false)
+        @with_batman = Investigation.with_batman
+        @unassigned_cases = Investigation.unassigned
     end
 
     def show
@@ -40,11 +43,12 @@ class InvestigationsController < ApplicationController
             flash[:notice] = "Investigation has been closed."
             redirect_to investigations_path
         else
-            redirect_to :close
+            redirect_to investigation_path
         end
     end
 
     private
+    
     def set_investigation
         @investigation = Investigation.find(params[:id])
     end

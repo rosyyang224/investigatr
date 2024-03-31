@@ -38,6 +38,9 @@ Rails.application.routes.draw do
     # Resource routes (maps HTTP verbs to controller actions automatically):
     resources :crimes
     resources :criminals
+    resources :units
+    resources :investigations
+    resources :officers
   
   
     # Routes for assignments

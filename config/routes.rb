@@ -32,6 +32,8 @@ Rails.application.routes.draw do
     
 
     # Authentication routes
+    get 'login', to: 'sessions#new', as: :login
+    get 'logout', to: 'sessions#destroy', as: :logout
 
     
 
@@ -39,7 +41,11 @@ Rails.application.routes.draw do
     resources :crimes
     resources :criminals
     resources :units
-    resources :investigations
+    resources :investigations do
+      member do
+        patch 'close'
+      end
+    end
     resources :officers
     resources :sessions
   

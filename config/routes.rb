@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 
   # Routes for regular HTML views go here...
     # Semi-static page routes
+    get 'home', to: 'home#index', as: :home
 
     
 

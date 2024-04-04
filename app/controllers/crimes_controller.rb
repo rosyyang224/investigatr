@@ -13,7 +13,7 @@ class CrimesController < ApplicationController
     def create
         @crime = Crime.new(crime_params)
         if @crime.save
-            flash[:notice] = "Added " + @crime.name + " to GCPD."
+            flash[:notice] = "Successfully added " + @crime.name + " to GCPD."
             redirect_to crimes_path
         else
             render action: 'new'

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
       post 'investigations/:id/crime_investigations', to: 'investigations#new_crime_investigation', as: :new_crime_investigation
       put 'investigations/:id', to: 'investigations#update', as: :update_investigation_detail
       delete 'investigations/:id/crimes/:crime_id', to: 'investigations#delete_crime_investigation', as: :delete_investigation_crime
+      # delete 'remove_crimes/:id', to: 'crime_investigations#destroy', as: :remove_crime_investigation
 
       # Routes for earlier API; disabled for React useage (some overlap)
       # get 'units', to: 'units#index', as: :units
@@ -39,7 +40,7 @@ Rails.application.routes.draw do
     
 
     # Resource routes (maps HTTP verbs to controller actions automatically):
-    resources :crimes
+    resources :crimes 
     resources :criminals
     resources :units
     resources :investigations do
@@ -49,12 +50,14 @@ Rails.application.routes.draw do
     end
     resources :officers
     resources :sessions
+    resources :suspects
   
     # Routes for assignments
 
     
 
     # Routes for crime_investigations
+    resources :crime_investigations, only: [:new, :create, :destroy]
 
     
 

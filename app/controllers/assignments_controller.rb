@@ -1,6 +1,8 @@
 class AssignmentsController < ApplicationController
     before_action :set_officer, only: [:new, :create]
-    before_action :set_assignment, only: [:terminate]
+    before_action :set_assignment, only: [:show, :edit, :update, :destroy]
+    before_action :check_login
+    authorize_resource
   
     def new
         @officer = Officer.find(params[:officer_id])

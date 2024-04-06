@@ -54,9 +54,9 @@ Rails.application.routes.draw do
     resources :sessions
   
     # Routes for assignments
-    get 'assignments/new/:officer_id', to: 'assignments#new', as: :new_assignment
-    post 'assignments', to: 'assignments#create'
-    patch 'terminate_assignment/:id', to: 'assignments#terminate', as: :terminate_assignment
+    get 'assignments/new', to: 'assignments#new', as: :new_assignment
+    post 'assignments/create', to: 'assignments#create'
+    patch 'assignments/:id/terminate', to: 'assignments#terminate', as: :terminate_assignment
 
 
     # Routes for crime_investigations
@@ -75,8 +75,6 @@ Rails.application.routes.draw do
     get 'suspects/new/:investigation_id', to: 'suspects#new', as: :new_suspect
     post 'suspects', to: 'suspects#create'
     patch 'terminate_suspect/:id', to: 'suspects#terminate', as: :terminate_suspect
-
-    
 
     # You can have the root of your site routed with 'root'
     root 'home#index'

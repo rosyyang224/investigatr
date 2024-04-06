@@ -2,7 +2,7 @@ class InvestigationsController < ApplicationController
     before_action :set_investigation, only: [:show, :edit, :update, :close]
     before_action :check_login
     authorize_resource
-    
+
     def index
         @open_investigations = Investigation.is_open
         @closed_investigations = Investigation.is_closed

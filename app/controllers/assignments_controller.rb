@@ -27,10 +27,6 @@ class AssignmentsController < ApplicationController
   
     private
   
-    def set_officer
-      @officer = Officer.find(params[:officer_id])
-    end
-  
     def set_assignment
       @assignment = Assignment.find(params[:id])
     end

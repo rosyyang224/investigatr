@@ -1,8 +1,8 @@
 class InvestigationNotesController < ApplicationController
-    before_action :set_investigation_note, only: [:create]
+    before_action :set_investigation_note, only: [:terminate]
     before_action :check_login
     authorize_resource
-    
+
     def new
         @investigation_note = InvestigationNote.new
         @investigation = Investigation.find(params[:investigation_id])
@@ -15,6 +15,7 @@ class InvestigationNotesController < ApplicationController
         flash[:notice] = "Successfully added investigation note."
         redirect_to investigation_path(@investigation_note.investigation)
       else
+        @investigation = Investigation.find(@investigation_note.investigation_id)
         render action: 'new', locals: { investigation: @investigation }
       end
     end
@@ -22,7 +23,7 @@ class InvestigationNotesController < ApplicationController
     private
   
     def set_investigation_note
-      @investigation_note = InvestigationNote.find(params[:id])
+      @investigation_note = InvestigationNote.find(params[:investigation_note_id])
     end
   
     def investigation_note_params

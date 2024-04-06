@@ -48,10 +48,11 @@ Rails.application.routes.draw do
       member do
         patch 'close'
       end
-      resources :crime_investigations, only: [:new, :create, :destroy]
     end
     resources :officers
     resources :sessions
+    resources :home
+    resources :users
   
     # Routes for assignments
     get 'assignments/new', to: 'assignments#new', as: :new_assignment

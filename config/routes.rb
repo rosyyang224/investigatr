@@ -16,7 +16,6 @@ Rails.application.routes.draw do
       post 'investigations/:id/crime_investigations', to: 'investigations#new_crime_investigation', as: :new_crime_investigation
       put 'investigations/:id', to: 'investigations#update', as: :update_investigation_detail
       delete 'investigations/:id/crimes/:crime_id', to: 'investigations#delete_crime_investigation', as: :delete_investigation_crime
-      # delete 'remove_crimes/:id', to: 'crime_investigations#destroy', as: :remove_crime_investigation
 
       # Routes for earlier API; disabled for React useage (some overlap)
       # get 'units', to: 'units#index', as: :units
@@ -57,7 +56,10 @@ Rails.application.routes.draw do
 
 
     # Routes for crime_investigations
-    resources :crime_investigations, only: [:new, :create, :destroy]
+    # resources :crime_investigations, only: [:new, :create, :destroy]
+    get 'crime_investigations/new/:investigation_id', to: 'crime_investigations#new', as: :new_crime_investigation
+    post 'crime_investigations', to: 'crime_investigations#create', as: :crime_investigations
+    delete 'crime_investigations/:id', to: 'crime_investigations#destroy', as: :remove_crimes
 
     
 

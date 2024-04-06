@@ -37,8 +37,9 @@ Rails.application.routes.draw do
     # Authentication routes
     get 'login', to: 'sessions#new', as: :login
     get 'logout', to: 'sessions#destroy', as: :logout    
+    get 'officers/new', to: 'officers#new', as: :signup
+    get 'officer/edit', to: 'officers#edit', as: :edit_current_officer
 
-    
     # Resource routes (maps HTTP verbs to controller actions automatically):
     resources :crimes 
     resources :criminals
@@ -78,6 +79,6 @@ Rails.application.routes.draw do
     
 
     # You can have the root of your site routed with 'root'
-
+    root 'home#index'
     
 end

@@ -1,6 +1,6 @@
 class SuspectsController < ApplicationController
-    before_action :set_investigation, only: [:new, :create, :terminate]
-  
+    before_action :set_suspect, only: [:show, :edit, :update, :destroy]
+
     def new
       @investigation = Investigation.find(params[:investigation_id])
         @current_suspects = @investigation.suspects.where(dropped_on: nil)

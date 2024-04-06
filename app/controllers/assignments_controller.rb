@@ -18,9 +18,10 @@ class AssignmentsController < ApplicationController
     end
   
     def terminate
-      @assignment.destroy
-      flash[:notice] = "Successfully terminated assignment."
-      redirect_to officer_path(@assignment.officer)
+        @assignment = Assignment.find(params[:id])
+        @assignment.update_attribute(:end_date, Date.current)
+        flash[:notice] = "Successfully terminated assignment."
+        redirect_to officer_path(@assignment.officer)
     end
   
     private

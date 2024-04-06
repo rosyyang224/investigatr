@@ -2,30 +2,34 @@ class SuspectsController < ApplicationController
     before_action :set_investigation, only: [:new, :create, :terminate]
   
     def new
-      @suspect = @investigation.suspects.new
-      @current_suspects = @investigation.suspects.where(dropped_on: nil)
+      @investigation = Investigation.find(params[:investigation_id])
+        @current_suspects = @investigation.suspects.where(dropped_on: nil)
+        @suspect = Suspect.new
     end
   
     def create
-      @suspect = @investigation.suspects.new(suspect_params)
+      @suspect = Suspect.new(suspect_params)
       if @suspect.save
         flash[:notice] = "Successfully added suspect."
-        redirect_to investigation_path(@investigation)
+        redirect_to investigation_path(@suspect.investigation)
       else
-        render :new
+        @investigation = Investigation.find(@suspect.investigation_id)
+        @current_suspects = @investigation.suspects.where(dropped_on: nil)
+        render action: 'new'
       end
     end
   
     def terminate
       @suspect = Suspect.find(params[:id])
       @suspect.update(dropped_on: Date.current)
+      flash[:notice] = "Successfully terminated suspect."
       redirect_to investigation_path(@suspect.investigation)
     end
   
     private
   
-    def set_investigation
-      @investigation = Investigation.find(params[:investigation_id])
+    def set_suspect
+      @suspect = Suspect.find(params[:id])
     end
   
     def suspect_params

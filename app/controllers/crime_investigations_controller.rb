@@ -13,7 +13,7 @@ class CrimeInvestigationsController < ApplicationController
         flash[:notice] = "Successfully added crime to investigation."
         redirect_to investigation_path(CrimeInvestigation.last.investigation)
     else
-        render action: 'new', locals: { investigation: @crime_investigation.investigation, crimes_list: @crimes_list }
+        render action: 'new', locals: {investigation: @crime_investigation.investigation, crimes_list: @crimes_list}
       end
     end
   

@@ -50,7 +50,6 @@ Rails.application.routes.draw do
     end
     resources :officers
     resources :sessions
-    resources :suspects, only: [:new, :create, :destroy]
   
     # Routes for assignments
 
@@ -67,7 +66,9 @@ Rails.application.routes.draw do
 
     
 
-    # Other custom routes
+    # Routes for suspects
+    get 'suspects/new/:investigation_id', to: 'suspects#new', as: :new_suspect
+    post 'suspects', to: 'suspects#create', as: :suspects
 
     
 

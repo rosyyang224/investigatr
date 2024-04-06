@@ -52,6 +52,9 @@ Rails.application.routes.draw do
     resources :sessions
   
     # Routes for assignments
+    get 'assignments/new/:officer_id', to: 'assignments#new', as: :new_assignment
+    post 'assignments', to: 'assignments#create'
+    patch 'terminate_assignment/:id', to: 'assignments#terminate', as: :terminate_assignment
 
 
     # Routes for crime_investigations

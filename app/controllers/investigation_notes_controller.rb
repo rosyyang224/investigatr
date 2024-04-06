@@ -1,5 +1,5 @@
 class InvestigationNotesController < ApplicationController
-    before_action :set_investigation_note, only: [:show, :edit, :update, :destroy]
+    before_action :set_investigation_note, only: [:create]
   
     def new
         @investigation_note = InvestigationNote.new

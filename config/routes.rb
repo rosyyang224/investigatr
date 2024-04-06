@@ -69,6 +69,7 @@ Rails.application.routes.draw do
     # Routes for suspects
     get 'suspects/new/:investigation_id', to: 'suspects#new', as: :new_suspect
     post 'suspects', to: 'suspects#create', as: :suspects
+    patch 'terminate_suspect/:id', to: 'suspects#terminate', as: :terminate_suspect
 
     
 

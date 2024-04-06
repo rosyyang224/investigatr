@@ -3,8 +3,8 @@ class SuspectsController < ApplicationController
 
     def new
       @investigation = Investigation.find(params[:investigation_id])
-        @current_suspects = @investigation.suspects.where(dropped_on: nil)
-        @suspect = Suspect.new
+      @current_suspects = @investigation.suspects.where(dropped_on: nil)
+      @suspect = Suspect.new
     end
   
     def create

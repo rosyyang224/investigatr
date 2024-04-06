@@ -1,5 +1,4 @@
 class AssignmentsController < ApplicationController
-    before_action :set_officer, only: [:new, :create]
     before_action :set_assignment, only: [:show, :edit, :update, :destroy]
     before_action :check_login
     authorize_resource
@@ -13,9 +12,9 @@ class AssignmentsController < ApplicationController
       @assignment = Assignment.new(assignment_params)
       if @assignment.save
         flash[:notice] = "Successfully added assignment."
-        redirect_to officer_path(@officer)
+        redirect_to officer_path(@assignment.officer)
       else
-        render action: 'new', locals: { officer: @officer }
+        render action: 'new', locals: { officer: @assignment.officer }
       end
     end
   

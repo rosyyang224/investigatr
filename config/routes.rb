@@ -55,7 +55,7 @@ Rails.application.routes.draw do
   
     # Routes for assignments
     get 'assignments/new', to: 'assignments#new', as: :new_assignment
-    post 'assignments/create', to: 'assignments#create'
+    post 'assignments/create', to: 'assignments#create', as: :assignments
     patch 'assignments/:id/terminate', to: 'assignments#terminate', as: :terminate_assignment
 
 

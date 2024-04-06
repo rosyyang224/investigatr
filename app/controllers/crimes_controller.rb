@@ -1,6 +1,8 @@
 class CrimesController < ApplicationController
     before_action :set_crime, only: [:edit, :update]
-
+    before_action :check_login
+    authorize_resource
+    
     def index
         @active_crimes = Crime.active
         @inactive_crimes = Crime.inactive

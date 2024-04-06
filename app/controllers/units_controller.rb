@@ -1,6 +1,8 @@
 class UnitsController < ApplicationController
     before_action :set_unit, only: [:show, :edit, :update, :destroy]
-
+    before_action :check_login
+    authorize_resource
+    
     def index
         @active_units = Unit.where(active: true)
         @inactive_units = Unit.where(active: false)

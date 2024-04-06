@@ -1,6 +1,8 @@
 class SuspectsController < ApplicationController
     before_action :set_suspect, only: [:show, :edit, :update, :destroy]
-
+    before_action :check_login
+    authorize_resource
+    
     def new
       @investigation = Investigation.find(params[:investigation_id])
       @current_suspects = @investigation.suspects.where(dropped_on: nil)

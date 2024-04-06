@@ -55,20 +55,20 @@ Rails.application.routes.draw do
 
 
     # Routes for crime_investigations
-    # resources :crime_investigations, only: [:new, :create, :destroy]
     get 'crime_investigations/new/:investigation_id', to: 'crime_investigations#new', as: :new_crime_investigation
-    post 'crime_investigations', to: 'crime_investigations#create', as: :crime_investigations
+    post 'crime_investigations', to: 'crime_investigations#create'
     delete 'crime_investigations/:id', to: 'crime_investigations#destroy', as: :remove_crimes
 
     
 
     # Routes for investigation_notes
-
+    resources :investigation_notes, only: [:create]
+    get 'investigation_notes/new/:investigation_id', to: 'investigation_notes#new', as: :new_investigation_note
     
 
     # Routes for suspects
     get 'suspects/new/:investigation_id', to: 'suspects#new', as: :new_suspect
-    post 'suspects', to: 'suspects#create', as: :suspects
+    post 'suspects', to: 'suspects#create'
     patch 'terminate_suspect/:id', to: 'suspects#terminate', as: :terminate_suspect
 
     

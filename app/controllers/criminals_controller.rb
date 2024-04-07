@@ -1,6 +1,8 @@
 class CriminalsController < ApplicationController
     before_action :set_criminal, only: [:show, :edit, :update, :destroy]
-
+    before_action :check_login
+    authorize_resource
+    
     def index
         @criminals = Criminal.all
         @enhanced_powers = Criminal.enhanced

@@ -1,0 +1,14 @@
+<h1>Active Officers in GCPD</h1>
+<table class="striped highlight">
+  <thead>
+    <th>Name</th>
+    <th>Rank</th>
+    <th class="align_center">Options</th>
+  </thead>
+    <% for officer in @active_officers %>
+    <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
+      <td><%= link_to officer.name, officer_path(officer) %></td>
+      <td><%= officer.rank %></td>
+    </tr>   
+  <% end %>
+</table>

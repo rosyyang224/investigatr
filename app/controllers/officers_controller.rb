@@ -1,5 +1,7 @@
 class OfficersController < ApplicationController
     before_action :set_officer, only: [:show, :edit, :update, :destroy]
+    before_action :check_login
+    authorize_resource
 
     def index
         @active_officers = Officer.where(active: true)

@@ -11,7 +11,7 @@ class ApiController < ActionController::API
   end
 
   private
-  # Handling authentication
+
   def current_user
     @current_user ||= Officer.find(session[:officer_id]) if session[:officer_id]
   end

@@ -1,0 +1,30 @@
+<h4><%=@officer.proper_name%></h4>
+<div class="card yellow lighten-4">
+  <div class="card-content">
+    <b>Current unit:&nbsp;&nbsp;</b><br>
+      <%= @officer.unit.name %><br>
+
+    <b>Current rank:&nbsp;&nbsp;</b><br>
+      <%= @officer.rank %><br>
+
+    <b>Active duty?&nbsp;&nbsp;</b><br>
+      <%= @officer.active ? "Yes" : "No" %><br>
+    
+   <% unless @current_assignments == nil or @current_assignments.empty? %>
+        <b>Current Assignments&nbsp;&nbsp;</b><br>
+            <ul>
+            <% for a in @current_assignments do %>
+            <li><%= a.investigation.title%></li> 
+            <% end %>
+        </ul><br>
+    <% end %>
+    
+    <% unless @past_assignments == nil or @past_assignments.empty? %>
+    <b>Past Assignments&nbsp;&nbsp;</b><br>
+      <ul>
+        <% for a in @past_assignments do %>
+          <li><%= a.investigation.title%></li> 
+        <% end %>
+      </ul><br>
+    <% end %>
+</div>

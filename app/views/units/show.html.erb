@@ -1,1 +1,24 @@
-<%= react_component("Investigation", { investigationId: params[:id] }) %>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title"><%= @unit.name %>'s os</span>
+    <% if @officers.empty? %>
+      <p>There are no active officers currently in this unit</p>
+    <% else %>
+     <p>Active Officers in <%=@unit.name%> Unit</p>
+      <table class="striped highlight">
+        <thead>
+          <th>Name</th>
+          <th>Rank</th>
+          <th>Active Assignments</th>
+        </thead>
+        <% for o in @officers %>
+          <tr>
+            <td><%= o.name %></td>
+            <td><%= o.rank %></td>
+            <td><%= o.assignments.current.count %></td>
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+</div>

@@ -27,7 +27,7 @@ class InvestigationNotesController < ApplicationController
     end
   
     def investigation_note_params
-      params.require(:investigation_note).permit(:content)
+      params.require(:investigation_note).permit(:investigation_id, :officer_id, :content)
     end
   end
   

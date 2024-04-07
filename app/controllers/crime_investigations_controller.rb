@@ -12,10 +12,10 @@ class CrimeInvestigationsController < ApplicationController
     def create
       @crime_investigation = CrimeInvestigation.new(crime_investigation_params)
       if @crime_investigation.save
-        flash[:notice] = "Successfully added crime to investigation."
-        redirect_to investigation_path(CrimeInvestigation.last.investigation)
-    else
-        render action: 'new', locals: {investigation: @crime_investigation.investigation, crimes_list: @crimes_list}
+          flash[:notice] = "Successfully added #{@crime_investigation.crime.name} to #{@crime_investigation.investigation.title}."
+          redirect_to investigation_path(CrimeInvestigation.last.investigation)
+      else
+          render action: 'new', locals: { investigation: @crime_investigation.investigation, crimes_list: @crimes_list }
       end
     end
   
@@ -32,7 +32,7 @@ class CrimeInvestigationsController < ApplicationController
     end
   
     def crime_investigation_params
-      params.require(:crime_investigation).permit(:crime_id)
+        params.require(:crime_investigation).permit(:crime_id, :investigation_id)
     end
   end
   

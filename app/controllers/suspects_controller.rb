@@ -23,7 +23,7 @@ class SuspectsController < ApplicationController
   
     def terminate
       @suspect = Suspect.find(params[:id])
-      @suspect.update_attribute(dropped_on: Date.current)
+      @suspect.update(dropped_on: Date.current)
       flash[:notice] = "Successfully terminated suspect."
       redirect_to investigation_path(@suspect.investigation)
     end

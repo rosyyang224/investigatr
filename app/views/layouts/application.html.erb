@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>GCPD Management System</title>
+    <title>GCPD System</title>
     <%= csrf_meta_tags %>
     
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,15 +12,26 @@
 
   <body>
     <header>
-
-
+      <%= render :partial => "partials/topbar" %>
+      <% if logged_in? %>
+        <%= render :partial => "partials/nav" %>
+      <% end %>
     </header>
     <main>
+      <div class="container">
+        <div class="row">
+          <div class="col s12">
+            <!-- Flash messages appear here -->
+            <%= render :partial => "partials/flash" %>
 
-      <%= yield %>
+            <!-- MAIN CONTENT OF TEMPLATE GOES HERE -->
+            <%= yield %>
 
+          </div>
+        </div>
+      </div>
     </main>
-    
+    <%= render :partial => "partials/footer" %> 
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>   
   </body>
 </html>

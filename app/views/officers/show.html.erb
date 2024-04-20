@@ -14,21 +14,31 @@
       <%= @officer.active ? "Yes" : "No" %><br>
     
    <% unless @current_assignments == nil or @current_assignments.empty? %>
-        <b>Current Assignments&nbsp;&nbsp;</b><br>
-            <ul>
-            <% for a in @current_assignments do %>
+   <div class="card" id="current_assignments">
+    <div class="card-content">
+      <b>Current Assignments&nbsp;&nbsp;</b><br>
+          <ul>
+          <% for a in @current_assignments do %>
+            <li><%= "Starting" %> </li><br>
             <li><%= a.investigation.title%></li> 
-            <% end %>
-        </ul><br>
+          <% end %>
+      </ul><br>
+      </div>
+    </div>
     <% end %>
     
     <% unless @past_assignments == nil or @past_assignments.empty? %>
-    <b>Past Assignments&nbsp;&nbsp;</b><br>
-      <ul>
-        <% for a in @past_assignments do %>
-          <li><%= a.investigation.title%></li> 
-        <% end %>
-      </ul><br>
+    <div class="card" id="past_assignments">
+        <div class="card-content">
+          <b>Past Assignments&nbsp;&nbsp;</b><br>
+              <ul>
+              <% for a in @past_assignments do %>
+                <li><%= "Ending" %> </li><br>
+                <li><%= a.investigation.title%></li> 
+              <% end %>
+          </ul><br>
+        </div>
+    </div>
     <% end %>
 </div>
 

@@ -10,7 +10,7 @@ class UnitsController < ApplicationController
     
     def show
         @unit = Unit.find(params[:id])
-        @officers = @unit.officers.active.alphabetical
+        @officers = @unit.officers.active.alphabetical.paginate(page: params[:page]).per_page(10)
     end
     
     def new
@@ -33,6 +33,7 @@ class UnitsController < ApplicationController
     def update
         @unit = Unit.find(params[:id])
         if @unit.update(unit_params)
+            flash[:notice] = "Updated unit information"
             redirect_to unit_path(@unit)
         else
             render action: 'edit'

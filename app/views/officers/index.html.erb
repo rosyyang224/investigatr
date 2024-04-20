@@ -12,3 +12,5 @@
     </tr>   
   <% end %>
 </table>
+<%= will_paginate @active_officers, previous_label: "Previous&nbsp;", next_label: "&nbsp;Next" %>
+<%= link_to "New Officer", new_officer_path, class: 'waves-effect waves-light btn' %> 

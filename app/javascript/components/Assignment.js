@@ -12,16 +12,21 @@ function Assignment({ investigation }) {
                     <p>There are no officers currently assigned to this investigation.</p>
                 ) : (
                     <ul>
-                        {current_assignments.map((assignment) => {
-                            const officer = assignment.data.attributes.officer.data.attributes;
-                            return (
-                                <li key={`assignment-${assignment.data.id}`}>
-                                    <p>
-                                        &bull; {officer.rank} {officer.first_name} {officer.last_name} (as of: <FormattedDate dateString={assignment.data.attributes.start_date} />)
-                                    </p>
-                                </li>
-                            );
-                        })}
+                        {current_assignments.map(({ data }) => (
+                            <li key={`assignment-${data.id}`}>
+                                <p>
+                                    <ul>
+                                        <li>
+                                            &bull; {data.attributes.officer.data.attributes.rank}{" "}
+                                            {data.attributes.officer.data.attributes.first_name}{" "}
+                                            {data.attributes.officer.data.attributes.last_name}{" "}
+                                            (as of:{" "}
+                                            {FormattedDate(data.attributes.start_date)})
+                                        </li>
+                                    </ul>
+                                </p>
+                            </li>
+                        ))}
                     </ul>
                 )}
             </div>

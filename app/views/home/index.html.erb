@@ -1,8 +1,15 @@
-<head>
-  <title>Your Application</title>
-</head>
-<body>
-  <footer>
-    <p>Webmaster: YOUR NAME HERE</p>
-  </footer>
-</body>
+<div class="row">
+  <div class="col s12 m6 offset-m3">
+    <div class="card yellow lighten-5">
+      <div class="card-content">
+        <% unless logged_in? %>
+          <%= link_to 'Login', login_path, class: 'btn btn-primary' %>
+        <% end %>
+        <h4>Welcome to GCPD</h4>
+        <p>
+        Welcome to the virtual precinct of the Gotham City Police Department (GCPD). Within our ranks, we are a formidable force of dedicated law enforcement professionals, unwaveringly committed to the safety and security of Gotham City and its citizens. With vigilance as our cornerstone, we strive to maintain order and uphold justice in every corner of our beloved metropolis. Ready and resolute, we stand as guardians of the peace, poised to serve and protect at a moment's notice. Step into our virtual precinct and discover the tireless efforts and unwavering dedication that define the GCPD.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,30 @@
-<%if @open_investigations.empty?%>
-    <h4>No open cases at this time</h4>
-<%else%>
-    <h4>Open Investigations in GCPD</h4>
-    <table class="striped highlight">
-    <thead>
-        <th>Title</th>
-        <th>Date open</th>
-    </thead>
-    <%for i in @open_investigations%>
+<div class="container">
+  <% if @open_investigations.empty? %>
+    <h3>No open cases at this time</h3>
+  <% else %>
+    <h3>Open Investigations in GCPD</h3>
+    <table class="highlight responsive-table">
+      <thead>
         <tr>
-            <td><%= i.title %></td>
-            <td><%= i.date_opened.strftime("%m/%d/%y")%></td>
+          <th>Title</th>
+          <th>Crime Location</th>
+          <th>Date Opened</th>
+          <th>Batman Involved?</th>
+          <th>Number of Officers Assigned</th>
         </tr>
-    <% end %>
+      </thead>
+      <tbody>
+        <% @open_investigations.each do |investigation| %>
+          <tr>
+            <td><%= link_to investigation.title, investigation_path(investigation) %></td>
+            <td><%= investigation.crime_location %></td>
+            <td><%= investigation.date_opened.strftime("%m/%d/%y") %></td>
+            <td><%= investigation.batman_involved ? "Yes" : "No" %></td>
+            <td><%= investigation.officers.count %></td>
+          </tr>
+        <% end %>
+      </tbody>
     </table>
     <br>
-<% end%>
+  <% end %>
+</div>

@@ -1,2 +1,66 @@
 ﻿File,Tool,Method_Name,Prompt(s)_Used
-ExampleFile,ChatGPT,ExampleMethod,My prompt was… Replace this row with your real first use of Gen AI
+api_controller,ChatGPT,index,How to render JSON data for all investigations without including sensitive information?
+api_controller,ChatGPT,show,How to display detailed JSON data for a specific investigation?
+api_controller,ChatGPT,create,How to create a new investigation record using parameters passed through an API request?
+officer_controller,ChatGPT,index,How to display a list of all officers with their ranks and badge numbers?
+officer_controller,ChatGPT,show,How to render detailed information about a specific officer, including their past assignments?
+officer_controller,ChatGPT,create,How to add a new officer to the system with validation checks for required fields?
+investigation_controller,ChatGPT,index,How to list all investigations along with their case statuses and assigned officers?
+investigation_controller,ChatGPT,show,How to present detailed information about a specific investigation, including related crimes?
+investigation_controller,ChatGPT,create,How to create a new investigation record with proper validation and error handling?
+assignment_controller,ChatGPT,index,How to display a summary of all active assignments, including officers and their current cases?
+assignment_controller,ChatGPT,show,How to show details of a specific assignment, including the start date and assigned officer?
+assignment_controller,ChatGPT,create,How to assign an officer to a new investigation and handle potential conflicts?
+crime_investigations_controller,ChatGPT,index,How to list all crime investigations and their statuses along with related details?
+crime_investigations_controller,ChatGPT,show,How to display detailed information about a specific crime investigation, including involved suspects?
+crime_investigations_controller,ChatGPT,create,How to create a new crime investigation record and associate it with existing crimes?
+crimes_controller,ChatGPT,index,How to render a list of all reported crimes with their types and locations?
+crimes_controller,ChatGPT,show,How to display detailed information about a specific crime, including related suspects?
+crimes_controller,ChatGPT,create,How to add a new crime report to the system with proper validation checks?
+criminals_controller,ChatGPT,index,How to list all known criminals along with their aliases and criminal records?
+criminals_controller,ChatGPT,show,How to display detailed information about a specific criminal, including their associated crimes?
+criminals_controller,ChatGPT,create,How to add a new criminal to the database with validation for unique identifiers?
+home_controller,ChatGPT,index,How to render the home page with dynamic content and recent updates?
+sessions_controller,ChatGPT,new,How to display a login form with proper styling and error handling?
+sessions_controller,ChatGPT,create,How to authenticate user login credentials and redirect to the appropriate page?
+sessions_controller,ChatGPT,destroy,How to handle user logout and clear session data securely?
+suspects_controller,ChatGPT,index,How to list all suspected individuals along with their case involvements and current status?
+suspects_controller,ChatGPT,show,How to display detailed information about a specific suspect, including past arrests?
+suspects_controller,ChatGPT,create,How to add a new suspect to the system and link them to ongoing investigations?
+units_controller,ChatGPT,index,How to render a list of all police units with their assigned officers and current activities?
+units_controller,ChatGPT,show,How to display detailed information about a specific police unit, including its leadership?
+units_controller,ChatGPT,create,How to add a new police unit to the system with validation for required fields?
+0_Setup_basic.feature,ChatGPT,do_not_see_default_rails_page,How to ensure the default Rails page is hidden from view?
+0_Setup_basic.feature,ChatGPT,view_about_page,How to verify the functionality of the About Us page?
+0_Setup_basic.feature,ChatGPT,view_contact_page,How to ensure the Contact Us page is properly displayed?
+0_Setup_basic.feature,ChatGPT,view_privacy_policy,How to validate the visibility of the Privacy Policy page?
+0_Setup_basic.feature,ChatGPT,view_webmaster_info_in_footer,How to confirm the presence of webmaster information in the footer section?
+1_Authentication_basic.feature,ChatGPT,test_successful_login,How to simulate and validate a successful login with valid credentials?
+1_Authentication_basic.feature,ChatGPT,test_failed_login,How to simulate and verify a failed login attempt with incorrect credentials?
+1_Authentication_basic.feature,ChatGPT,test_logout,How to test the logout functionality and ensure users are logged out properly?
+2_Units_basic_read.feature,ChatGPT,view_all_units,How to ensure all units are displayed correctly?
+2_Units_basic_read.feature,ChatGPT,unit_name_link_to_details,How to verify that the unit name is clickable and leads to detailed information?
+2_Units_basic_read.feature,ChatGPT,view_unit_details,How to test and display detailed information for a specific unit?
+3_Officers_basic_read.feature,ChatGPT,view_all_officers,How to verify the correct display of all officers?
+3_Officers_basic_read.feature,ChatGPT,officer_name_link_to_details,How to ensure officer names are links leading to their respective details?
+3_Officers_basic_read.feature,ChatGPT,view_officer_details,How to test and display detailed information for a specific officer?
+4_Investigations_basic_read.feature,ChatGPT,test_no_investigations,How to handle and test the scenario when there are no investigations available?
+4_Investigations_basic_read.feature,ChatGPT,view_all_investigations,How to ensure the correct display of all investigations?
+5_Units_med_write.feature,ChatGPT,test_successful_unit_creation,How to validate the successful creation of a new unit?
+5_Units_med_write.feature,ChatGPT,test_duplicate_unit_creation_failure,How to handle and test the scenario when a unit with the same name already exists?
+5_Units_med_write.feature,ChatGPT,test_successful_unit_edit,How to validate the successful editing of an existing unit?
+6_Officers_med_write.feature,ChatGPT,test_successful_officer_creation,How to validate the successful creation of a new officer?
+6_Officers_med_write.feature,ChatGPT,test_invalid_officer_creation_failure,How to handle and test the scenario when invalid officer details are provided?
+6_Officers_med_write.feature,ChatGPT,test_successful_officer_promotion,How to validate the successful promotion of an officer?
+7_Officers_med_read.feature,ChatGPT,View all officers with pagination,How to paginate and display officers' names and ranks for easier navigation?
+7_Officers_med_read.feature,ChatGPT,Viewing Jim Gordon's SSN and no past assignments,How to display specific details about Jim Gordon, including SSN, current unit, rank, and active duty status, while omitting past assignments?
+8_Units_adv_read.feature,ChatGPT,Advanced unit statistics displayed,How to display advanced statistics for a specific unit, including active officers, open cases, closed cases, and cases involving Batman?
+Assignments.js,ChatGPT,Assignment component,How to implement a React component to display current assignments for an investigation, including officer ranks, names, and assignment dates?
+Assignments.js,ChatGPT,Investigation Notes component,How to implement a React component to display investigation notes, including note text, date, and officer name, with the ability to add new notes?
+Assignments.js,ChatGPT,Suspects History component,How to implement a React component to display suspects associated with an investigation, including suspect names and dates they became suspects, with the option to drop suspects or add new ones?
+Crimes.js,ChatGPT,CrimeEditor component,How to implement a React component to add new crimes to an investigation, with options to select from existing crimes and save or cancel the addition?
+Crimes.js,ChatGPT,Crimes component,How to implement a React component to display crimes associated with an investigation, including crime names and types (felony/misdemeanor), with the ability to add new crimes?
+InvestigationNotes.js,ChatGPT,InvestigationNotesEditor component,How to implement a React component to allow users to add investigation notes with a text area and save/cancel buttons?
+InvestigationNotes.js,ChatGPT,InvestigationNotes component,How to implement a React component to display investigation notes, including note text, date, and officer name, with the ability to add new notes?
+Suspects.js,ChatGPT,SuspectEditor component,How to implement a React component to add new suspects to an investigation, with options to select from existing suspects and save or cancel the addition?
+Suspects.js,ChatGPT,Suspects component,How to implement a React component to display suspects associated with an investigation, including suspect names and dates they became suspects, with the option to drop suspects or add new ones?

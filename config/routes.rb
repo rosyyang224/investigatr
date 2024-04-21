@@ -65,8 +65,6 @@ Rails.application.routes.draw do
     post 'crime_investigations', to: 'crime_investigations#create'
     delete 'crime_investigations/:id', to: 'crime_investigations#destroy', as: :remove_crimes
 
-    
-
     # Routes for investigation_notes
     resources :investigation_notes, only: [:create]
     get 'investigation_notes/new/:investigation_id', to: 'investigation_notes#new', as: :new_investigation_note

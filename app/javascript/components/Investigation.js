@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { get } from "../api";
 import InvestigationOverview from "./InvestigationOverview";
 import Crimes from "./Crimes";
+import Assignment from "./Assignment";
 
 function Investigation({ investigationId }) {
   const [investigation, setInvestigation] = React.useState();
@@ -38,11 +39,16 @@ function Investigation({ investigationId }) {
             crimes={investigationData.crimes}
             investigationId={investigationId}
           />
-        </div>  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s6">
+          <Assignment investigation={investigation} />
+        </div>
       </div>
 
-      
-      
+
+
     </>
   );
 }

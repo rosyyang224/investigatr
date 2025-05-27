@@ -1,15 +1,26 @@
-<div class="row">
-  <div class="col s12 m6 offset-m3">
-    <div class="card yellow lighten-5">
-      <div class="card-content">
-        <% unless logged_in? %>
-          <%= link_to 'Login', login_path, class: 'btn btn-primary' %>
-        <% end %>
-        <h4>Welcome to GCPD</h4>
-        <p>
-        Welcome to the virtual precinct of the Gotham City Police Department (GCPD). Within our ranks, we are a formidable force of dedicated law enforcement professionals, unwaveringly committed to the safety and security of Gotham City and its citizens. With vigilance as our cornerstone, we strive to maintain order and uphold justice in every corner of our beloved metropolis. Ready and resolute, we stand as guardians of the peace, poised to serve and protect at a moment's notice. Step into our virtual precinct and discover the tireless efforts and unwavering dedication that define the GCPD.
-        </p>
-      </div>
+<div class="container" style="max-width: 900px; margin-top: 40px;">
+  <div class="card z-depth-2" style="border-radius: 16px; padding: 40px 30px;">
+    <div class="card-content">
+      <h4 class="center-align red-text text-darken-1" style="font-weight: 600; margin-bottom: 30px;">
+        Welcome to GCPD
+      </h4>
+
+      <p class="grey-text text-darken-2 center-align" style="line-height: 1.7; font-size: 1.15rem;">
+        Welcome to the virtual precinct of the
+        <strong>Gotham City Police Department (GCPD)</strong>.
+        Within our ranks stands a formidable force of law enforcement professionals,
+        unwaveringly committed to the safety and security of Gotham City and its people.<br><br>
+      </p>
+
+      <p class="grey-text text-darken-2 center-align" style="line-height: 1.7; font-size: 1.15rem">
+        With vigilance as our cornerstone, we uphold order and justice in every corner of our city.
+        Ready and resolute, the GCPD stands as a shield against chaos — guardians of the peace who
+        serve and protect at a moment’s notice.<br><br>
+      </p>
+
+      <p class="grey-text text-darken-2 center-align" style="line-height: 1.7; font-size: 1.15rem;">
+        Step into our virtual precinct and explore the dedication, grit, and heart that power the GCPD every day.
+      </p>
     </div>
   </div>
 </div>

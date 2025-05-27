@@ -1,31 +1,38 @@
 <div class="container">
-  <h4>Active Units in GCPD</h4>
-  <table class="highlight responsive-table">
-    <thead>
-      <tr>
-        <th>Unit</th>
-        <th>Active</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% if @active_units.present? %>
-        <% @active_units.each do |unit| %>
-          <tr class="<%= cycle('dg_list_line_odd', 'dg_list_line_even') %>">
-            <td><%= link_to unit.name, unit_path(unit) %></td>
-            <td><%= unit.active ? "Yes" : "No" %></td>
+  <h4 class="center-align red-text text-darken-2" style="margin-top: 30px;">
+    Active Units in GCPD
+  </h4>
+
+  <div class="card z-depth-2" style="border-radius: 12px; padding: 20px; margin-top: 20px;">
+    <table class="highlight responsive-table centered">
+      <thead class="blue-text text-darken-2">
+        <tr>
+          <th>Unit</th>
+          <th>Active</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if @active_units.present? %>
+          <% @active_units.each do |unit| %>
+            <tr>
+              <td><%= link_to unit.name, unit_path(unit), class: 'blue-text text-darken-2' %></td>
+              <td><span class="<%= unit.active ? 'green-text text-darken-2' : 'red-text text-darken-2' %>">
+                <%= unit.active ? "Yes" : "No" %></span>
+              </td>
+            </tr>
+          <% end %>
+        <% else %>
+          <tr>
+            <td colspan="2" class="grey-text text-darken-1">No active units at this time</td>
           </tr>
         <% end %>
-      <% else %>
-        <tr>
-          <td colspan="2">No active units at this time</td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 
-  <div class="row">
-    <div class="col s12 center-align">
-      <%= link_to "New Unit", new_unit_path, class: 'btn waves-effect waves-light' %>
+    <div class="divider" style="margin: 30px 0;"></div>
+
+    <div class="center-align">
+      <%= link_to "New Unit", new_unit_path, class: 'btn blue darken-2 waves-effect waves-light', style: 'border-radius: 8px;' %>
     </div>
   </div>
 </div>

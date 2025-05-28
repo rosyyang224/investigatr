@@ -1,0 +1,47 @@
+<!-- <nav class="mobile-nav red lighten-2 z-depth-1">
+  <div class="container nav-wrapper">
+    <a href="/home" class="mobile-nav__logo">GCPD</a>
+    <a href="javascript:void(0)" class="mobile-nav__toggle" id="mobile-toggle">
+      <i class="material-icons">menu</i>
+    </a>
+  </div>
+  <div class="mobile-nav__links" id="mobile-links">
+    <%= link_to 'Privacy',       privacy_path,       class: 'mobile-nav__item' %>
+    <%= link_to 'About',         about_path,         class: 'mobile-nav__item' %>
+    <%= link_to 'Contact',       contact_path,       class: 'mobile-nav__item' %>
+    <%= link_to 'Investigations',investigations_path,class: 'mobile-nav__item' %>
+    <%= link_to 'Officers',      officers_path,      class: 'mobile-nav__item' %>
+    <%= link_to 'Units',         units_path,         class: 'mobile-nav__item' %>
+    <hr class="mobile-nav__divider">
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path, class: 'mobile-nav__item' %>
+    <% else %>
+      <%= link_to 'Login',  login_path,  class: 'mobile-nav__item' %>
+    <% end %>
+  </div>
+</nav> -->
+
+<nav class="mobile-nav red lighten-2 z-depth-1 hide-on-med-and-up">
+  <div class="container nav-wrapper">
+    <a href="/home" class="mobile-nav__logo">GCPD</a>
+    <a href="javascript:void(0)" class="mobile-nav__toggle" id="mobile-toggle">
+      <i class="material-icons">menu</i>
+    </a>
+  </div>
+
+  <div class="mobile-nav__links" id="mobile-links">
+    <%= link_to 'Privacy',       privacy_path,       class: 'mobile-nav__item' %>
+    <%= link_to 'About',         about_path,         class: 'mobile-nav__item' %>
+    <%= link_to 'Contact',       contact_path,       class: 'mobile-nav__item' %>
+    <%= link_to 'Investigations',investigations_path,class: 'mobile-nav__item' %>
+    <%= link_to 'Officers',      officers_path,      class: 'mobile-nav__item' %>
+    <%= link_to 'Units',         units_path,         class: 'mobile-nav__item' %>
+    <hr class="mobile-nav__divider">
+    <% if logged_in? %>
+      <%= link_to 'Logout', logout_path, class: 'mobile-nav__item' %>
+    <% else %>
+      <%= link_to 'Login',  login_path,  class: 'mobile-nav__item' %>
+    <% end %>
+  </div>
+</nav>
+

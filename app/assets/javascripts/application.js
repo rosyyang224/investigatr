@@ -42,3 +42,36 @@
 // $(document).ready(function(){
 //   $('.timepicker').timepicker();
 // });
+
+document.addEventListener('DOMContentLoaded', function(){
+    var elems = document.querySelectorAll('.sidenav');
+    M.Sidenav.init(elems);
+  });
+
+// function toggleMobileMenu() {
+//     var menu = document.getElementById("mobileNavLinks");
+//     if (!menu) return;
+//     if (menu.style.display === "flex") {
+//       menu.style.display = "none";
+//     } else {
+//       menu.style.display = "flex";
+//     }
+//   }
+  
+document.addEventListener('DOMContentLoaded', function(){
+    var toggleBtn = document.getElementById('mobile-toggle');
+    var links     = document.getElementById('mobile-links');
+    if (!toggleBtn || !links) return;
+  
+    links.style.display = 'none';
+  
+    toggleBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      if (links.style.display === 'flex') {
+        links.style.display = 'none';
+      } else {
+        links.style.display = 'flex';
+      }
+    });
+  });
+  

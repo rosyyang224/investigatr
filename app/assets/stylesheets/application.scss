@@ -24,55 +24,69 @@
 
 /* center‐menu sits in the horizontal center */
 #nav .center-menu {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 2rem;           /* 32px gap between items */
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-/* auth-menu stays in normal flow on the right */
+    display: flex;
+    flex-grow: 1;
+    flex-wrap: wrap; /* allow to wrap on small screens */
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  
 #nav .auth-menu {
   margin-left: auto;
 }
 
-/* style the active underline exactly as you have it */
+#nav .center-menu li {
+    flex: 1 1 100px;
+    text-align: center;
+  }
+
+#nav .center-menu li a {
+    display: block;
+    padding: 0px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
 #nav .center-menu li.active a {
-  position: relative;
-  font-weight: 600;
-}
+    position: relative;
+    font-weight: 600;
+  }
+  
 #nav .center-menu li.active a::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0;
-  bottom: 0;
-  height: 3px;
-  background: white;
-}
+    content: "";
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 0;
+    height: 3px;
+    background: white;
+  }
 
 .sidenav-trigger .material-icons {
     color: white;
   }
 
-/* only show on screens ≤ 600px */
-@media (max-width: 600px) {
-    /* hide desktop nav items */
-    nav .nav-wrapper .center,
-    nav .nav-wrapper .right {
-      display: none !important;
+@media screen and (min-width: 810px) {
+    .desktop-nav {
+      display: flex !important;
     }
-  
     .mobile-nav {
-      display: block;
-      position: relative;
-      z-index: 1000; 
+      display: none !important;
     }
   }
   
-  /* bar at top */
+  @media screen and (max-width: 809px) {
+    .desktop-nav {
+      display: none !important;
+    }
+    .mobile-nav {
+      display: flex !important;
+    }
+  }
+  
   .mobile-nav .nav-wrapper {
     display: flex;
     justify-content: space-between;
@@ -80,7 +94,6 @@
     height: 50px;
   }
   
-  /* logo text */
   .mobile-nav__logo {
     color: white;
     font-size: 1.25rem;
@@ -88,26 +101,23 @@
     font-weight: bold;
   }
   
-  /* hamburger toggle */
   .mobile-nav__toggle {
     color: white;
     font-size: 1.5rem;
     text-decoration: none;
   }
   
-  /* the sliding panel */
   .mobile-nav__links {
     display: none;
     flex-direction: column;
     background-color: #E57373;
     position: absolute;
-    top: 50px;  /* right under the bar */
+    top: 50px; 
     left: 0;
     width: 100%;
-    z-index: 1000; /* above everything */
+    z-index: 1000;
   }
   
-  /* each link */
   .mobile-nav__item {
     padding: 0.75rem 1rem;
     color: white;
@@ -115,16 +125,13 @@
     border-bottom: 1px solid rgba(255,255,255,0.2);
   }
   
-  /* hover */
   .mobile-nav__item:hover {
     background: rgba(255,255,255,0.1);
   }
   
-  /* divider line */
   .mobile-nav__divider {
     margin: 0.5rem 0;
     border: 0;
     height: 1px;
     background: rgba(255,255,255,0.3);
   }
-  

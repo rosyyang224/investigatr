@@ -1,38 +1,4 @@
-<!--
-<nav id="nav" class="red lighten-2 z-depth-1">
-  <div class="nav-wrapper container">
-    <ul class="center-menu hide-on-med-and-down">
-      <li class="<%= 'active' if current_page?(privacy_path) %>">
-        <%= link_to "Privacy", privacy_path %>
-      </li>
-      <li class="<%= 'active' if current_page?(about_path) %>">
-        <%= link_to "About", about_path %>
-      </li>
-      <li class="<%= 'active' if current_page?(contact_path) %>">
-        <%= link_to "Contact", contact_path %>
-      </li>
-      <li class="<%= 'active' if current_page?(investigations_path) %>">
-        <%= link_to "Investigations", investigations_path %>
-      </li>
-      <li class="<%= 'active' if current_page?(officers_path) %>">
-        <%= link_to "Officers", officers_path %>
-      </li>
-      <li class="<%= 'active' if current_page?(units_path) %>">
-        <%= link_to "Units", units_path %>
-      </li>
-    </ul>
-
-    <ul class="auth-menu right hide-on-med-and-down">
-      <% if logged_in? %>
-        <li><%= link_to 'Logout', logout_path %></li>
-      <% else %>
-        <li><%= link_to 'Login', login_path %></li>
-      <% end %>
-    </ul>
-  </div>
-</nav> -->
-
-<nav id="nav" class="red lighten-2 z-depth-1 hide-on-small-only">
+<nav id="nav" class="desktop-nav red lighten-2 z-depth-1">
   <div class="nav-wrapper container">
     <ul class="center-menu">
       <li class="<%= 'active' if current_page?(privacy_path) %>">

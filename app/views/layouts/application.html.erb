@@ -14,8 +14,11 @@
     <header>
       <%= render :partial => "partials/topbar" %>
       <% if logged_in? %>
-        <%= render :partial => "partials/nav" %>
-        <%= render :partial => "partials/mobile_nav" %>
+        <%= render partial: "partials/nav" %>
+        <%= render partial: "partials/mobile_nav" %>
+      <% else %>
+        <!-- Optional: A simplified nav for public pages -->
+        <%= render partial: "partials/public_nav" %>
       <% end %>
     </header>
     <main>

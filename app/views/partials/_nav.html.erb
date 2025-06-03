@@ -1,14 +1,15 @@
 <nav id="nav" class="desktop-nav red lighten-2 z-depth-1">
   <div class="nav-wrapper container">
     <ul class="center-menu">
-    <li class="<%= 'active' if current_page?(about_path) %>">
-      <%= link_to 'About', about_path %>
-    </li>
-    <li class="<%= 'active' if current_page?(privacy_path) %>">
-      <%= link_to 'Privacy', privacy_path %>
-    <li class="<%= 'active' if current_page?(contact_path) %>">
-      <%= link_to 'Contact', contact_path %>
-    </li>
+      <li class="<%= 'active' if current_page?(about_path) %>">
+        <%= link_to 'About', about_path %>
+      </li>
+      <li class="<%= 'active' if current_page?(privacy_path) %>">
+        <%= link_to 'Privacy', privacy_path %>
+      <li class="<%= 'active' if current_page?(contact_path) %>">
+        <%= link_to 'Contact', contact_path %>
+      </li>
+      </li>
       <li class="<%= 'active' if current_page?(investigations_path) %>">
         <%= link_to 'Investigations', investigations_path %>
       </li>
@@ -19,12 +20,41 @@
         <%= link_to 'Units', units_path %>
       </li>
     </ul>
-    <ul class="auth-menu right">
+
+    <!-- <ul class="auth-menu right">
       <% if logged_in? %>
         <li><%= link_to 'Logout', logout_path %></li>
       <% else %>
         <li><%= link_to 'Login', login_path %></li>
-      <% end %>
-    </ul>
+      <% end %> 
+    </ul> -->
+
+    <% if logged_in? %>
+      <ul class="right">
+        <li>
+          <a class="dropdown-trigger white-text" href="#" data-target="user-dropdown">
+            <i class="material-icons">account_circle</i>
+          </a>
+        </li>
+      </ul>
+      <ul id="user-dropdown" class="dropdown-content">
+        <li><%= link_to "Account Info", officer_path(current_user) %></li>
+        <li class="divider" tabindex="-1"></li>
+        <li><%= link_to 'Log Out', logout_path %></li>
+      </ul>
+    <% else %>
+      <ul class="right">
+        <li><%= link_to "Login", login_path, class: "black-text" %></li>
+      </ul>
+    <% end %>
   </div>
 </nav>
+
+<!--
+<% if logged_in? %>
+  <ul id="user-dropdown" class="dropdown-content">
+    <li><%= link_to "Account", officer_path(current_user) %></li>
+    <li class="divider" tabindex="-1"></li>
+    <li><%= link_to 'Logout', logout_path %></li>
+  </ul>
+<% end %> -->

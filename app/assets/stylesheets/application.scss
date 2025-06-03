@@ -78,60 +78,67 @@
     }
   }
   
-  @media screen and (max-width: 809px) {
-    .desktop-nav {
-      display: none !important;
-    }
-    .mobile-nav {
-      display: flex !important;
-    }
+@media screen and (max-width: 809px) {
+  .desktop-nav {
+    display: none !important;
   }
-  
-  .mobile-nav .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 50px;
+  .mobile-nav {
+    display: flex !important;
   }
-  
-  .mobile-nav__logo {
-    color: white;
-    font-size: 1.25rem;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .mobile-nav__toggle {
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-  }
-  
-  .mobile-nav__links {
-    display: none;
-    flex-direction: column;
-    background-color: #E57373;
-    position: absolute;
-    top: 50px; 
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-  }
-  
-  .mobile-nav__item {
-    padding: 0.75rem 1rem;
-    color: white;
-    text-decoration: none;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
-  }
-  
-  .mobile-nav__item:hover {
-    background: rgba(255,255,255,0.1);
-  }
-  
-  .mobile-nav__divider {
-    margin: 0.5rem 0;
-    border: 0;
-    height: 1px;
-    background: rgba(255,255,255,0.3);
-  }
+}
+
+.mobile-nav .nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+}
+
+.mobile-nav__logo {
+  color: white;
+  font-size: 1.25rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mobile-nav__toggle {
+  color: white;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.mobile-nav__links {
+  display: none;
+  flex-direction: column;
+  background-color: #E57373;
+  position: absolute;
+  top: 50px; 
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.mobile-nav__item {
+  padding: 0.75rem 1rem;
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.mobile-nav__item:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.mobile-nav__divider {
+  margin: 0.5rem 0;
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+.dropdown-content {
+  z-index: 9999 !important;
+  display: block !important;
+  opacity: 1 !important;
+  transform: scaleX(1) scaleY(1) !important;
+}

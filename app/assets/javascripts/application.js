@@ -47,16 +47,6 @@ document.addEventListener('DOMContentLoaded', function(){
     var elems = document.querySelectorAll('.sidenav');
     M.Sidenav.init(elems);
   });
-
-// function toggleMobileMenu() {
-//     var menu = document.getElementById("mobileNavLinks");
-//     if (!menu) return;
-//     if (menu.style.display === "flex") {
-//       menu.style.display = "none";
-//     } else {
-//       menu.style.display = "flex";
-//     }
-//   }
   
 document.addEventListener('DOMContentLoaded', function(){
     var toggleBtn = document.getElementById('mobile-toggle');
@@ -74,4 +64,36 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     });
   });
+
+M.Dropdown.init(elems, {
+  constrainWidth: false,
+  coverTrigger: false,
+  alignment: 'right',  // This should align it to the right
+  container: document.body  // This helps with positioning
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('DOM loaded, looking for dropdown triggers...');
+  var elems = document.querySelectorAll('.dropdown-trigger');
+  console.log('Found dropdown triggers:', elems.length);
   
+  // Check if the dropdown content exists
+  var dropdownContent = document.getElementById('user-dropdown');
+  console.log('Dropdown content found:', dropdownContent);
+  
+  if (elems.length > 0) {
+    console.log('Initializing dropdowns...');
+    var instances = M.Dropdown.init(elems, {
+      constrainWidth: false,
+      coverTrigger: false,
+      alignment: 'right'
+    });
+    console.log('Dropdown instances created:', instances);
+    
+    // Test if we can manually open it
+    setTimeout(() => {
+      console.log('Trying to manually open dropdown...');
+      instances[0].open();
+    }, 2000);
+  }
+});

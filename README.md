@@ -74,19 +74,38 @@ To explore all features, log in with the seeded admin credentials:
 
 This account allows access to all administrative features including officer oversight, user management, and audit dashboards.
 
----
-
 ## Project Overview
 
-This project involved:
+This application was developed as part of a semester-long course. Over three major phases, the project evolved from a backend data model into a fully interactive, role-based, internal-facing web platform for managing law enforcement investigations.
 
-- Refactoring and redesigning user interfaces to improve usability
-- Enhancing role-specific workflows for different classes of users
-- Implementing relational models for real-world case tracking
-- Iterating design based on instructor and peer feedback
-- Streamlining the visual hierarchy and button logic for end users
+### Phase 2: Data Modeling & Business Logic
 
----
+- Designed and implemented all models based on a detailed ERD using Rails 7.0.x and Ruby 3.1.x
+- Created custom methods for each model, including query scopes, validations, and callbacks
+- Developed all database migrations and established complex ActiveRecord associations
+- Followed test-driven development (TDD) practices using the `simplecov` gem to achieve 100% unit test coverage across all models
+- Built custom helper methods to support business logic like activation status, assignments, and visibility
+- Refactored test contexts and organized unit test suites for modular debugging and autograder compliance
+
+### Phase 3: Authentication, Authorization & API Development
+
+- Integrated secure login authentication using `bcrypt`, implementing hashed passwords and role-based access through `role` fields and `password_digest`
+- Implemented the `CanCanCan` authorization library to enforce granular role-based permissions (admin, investigator, officer)
+- Created model-level abilities and tested access policies using provided test cases and authorization specs
+- Built RESTful read-only API endpoints for selected models (e.g., Investigations, Crimes), returning structured JSON
+- Achieved full test coverage for all new models and services, including join tables like `CrimeInvestigation`
+- Added support for callbacks and validations to enforce data integrity across crime and unit records
+
+### Phase 4: Controllers, Views, React, and Frontend UX
+
+- Implemented fully tested Rails controllers from scratch to pass all provided RSpec and Cucumber integration tests
+- Developed multi-role interfaces and forms using ERB and Materialize CSS with attention to accessibility, layout hierarchy, and readability
+- Built dynamic UI components with React to enhance the Investigations#show page:
+  - Rendered investigation notes asynchronously
+  - Allowed live updates and interactions without full-page reloads
+- Maintained strict 100% controller test coverage and validated full-stack behavior with Cucumber
+- Implemented proper authorization and error handling at both the controller and view levels
+- Followed semantic HTML5 structure, consistent CSS theming, and DRY rendering logic
 
 ## Repository Structure
 
@@ -96,7 +115,6 @@ This project involved:
 - `config/routes.rb` – Custom routes and nested resource logic
 - `db/seeds.rb` – Default data including admin user for demo purposes
 
----
 
 ## License and Attribution
 
